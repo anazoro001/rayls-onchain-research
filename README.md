@@ -39,6 +39,7 @@ The first destination, `0x73Bd2701D7B07A8dE578cB73F1d3D7fa193d9589`, is identifi
 
 I queried its `getOwners()` and `getThreshold()` functions. The results showed six owners and a transaction confirmation threshold of four.
 ![owners](evidence/threshold.png)
+![owerns2](normal.png)
 
 In practical terms, the Safe is configured to require four owner confirmations to execute a transaction under its normal operating rules.
 
