@@ -22,6 +22,8 @@ Its public RLS transfer history provides a starting point for investigating how 
 
 One pattern caught my attention: the treasury had sent matching amounts of RLS to two different destinations. For example, both received 2,988,047.81 RLS in block 25,901,063.
 
+![Foundation treasury Transaction](Screenshot-2026-10-30-190836.png)
+
 The two addresses were:
 
 - `0x73Bd2701D7B07A8dE578cB73F1d3D7fa193d9589`
