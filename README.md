@@ -22,7 +22,7 @@ Its public RLS transfer history provides a starting point for investigating how 
 
 One pattern caught my attention: the treasury had sent matching amounts of RLS to two different destinations. For example, both received 2,988,047.81 RLS in block 25,901,063.
 
-![Foundation treasury Transaction](treasury.png)
+![Foundation treasury Transaction](evidence/treasury.png)
 
 The two addresses were:
 
@@ -35,7 +35,10 @@ Matching transfers do not, by themselves, explain the purpose of either wallet. 
 
 The first destination, `0x73Bd2701D7B07A8dE578cB73F1d3D7fa193d9589`, is identified on Etherscan as a Safe 1.4.1 smart account.
 
+![Version](evidence/version.png)
+
 I queried its `getOwners()` and `getThreshold()` functions. The results showed six owners and a transaction confirmation threshold of four.
+![owners](evidence/threshold.png)
 
 In practical terms, the Safe is configured to require four owner confirmations to execute a transaction under its normal operating rules.
 
@@ -81,6 +84,8 @@ One particularly useful transaction occurred at block 23,038,996, on July 31, 20
 
 The transaction was successful. Etherscan identifies the operation as `Distribute RLS`, and the transaction details show three outgoing RLS transfers to the Foundation treasury, Wallet A and Wallet B.
 
+![Distribution contract](evidence/distribute.png)
+
 Each recipient received approximately 3.703 million RLS.
 
 | Recipient | RLS transferred |
@@ -98,7 +103,8 @@ This is stronger evidence than simply observing matching amounts in separate wal
 I also inspected the transaction's event logs.
 
 The screenshots show three ERC-20 `Transfer` events emitted by the RLS token contract and three corresponding `RLSDistributed` events emitted by the distribution contract.
-
+![Logs](evidence/Eventlogs.png)
+![Logs2](evidence/logs2.png)
 For each of the three destinations, the logs record the recipient and an amount consistent with the corresponding token transfer.
 
 This establishes that the transaction did more than produce three coincidentally similar entries in the explorer. The distribution contract emitted a corresponding distribution event for each recipient in the same transaction.
